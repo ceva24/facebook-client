@@ -45,18 +45,6 @@ public class FacebookClientTests
         assertTrue("Failed to authenticate", client.isAuthenticated());
     }
 
-    @Test
-    public void testGetObjectProperties()
-    {
-        String result = client.getObjectProperties(userName);
-
-        JsonObject jsonResult = (JsonObject)parser.parse(result);
-        JsonElement nameElement = jsonResult.get("username");
-        String name = nameElement.getAsString();
-
-        assertEquals("Unexpected username value returned", userName, name);
-    }
-
     @Test (expected = IllegalArgumentException.class)
     public void testGetObjectLikesUnauthenticated()
     {

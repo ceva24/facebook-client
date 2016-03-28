@@ -15,7 +15,6 @@ public class Main
         {
             facebook = new Facebook();
 
-            Main.runNameQuery();
             Main.runLikesQuery();
             Main.runDegreesQuery();
         }
@@ -23,11 +22,6 @@ public class Main
         {
             System.err.println("Failed to create Facebook client. Cause: " + e.getMessage());
         }
-    }
-
-    private static void runNameQuery()
-    {
-        System.out.println(facebook.getNameForId("ceva24"));
     }
 
     private static void runLikesQuery()

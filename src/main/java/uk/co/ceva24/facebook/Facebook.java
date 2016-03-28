@@ -38,16 +38,6 @@ public class Facebook
         }
     }
 
-    public String getNameForId(String id)
-    {
-        // Perform the API request and parse the data.
-        String data = client.getObjectProperties(id);
-        JsonObject json = (JsonObject)parser.parse(data);
-
-        // Confirm that the member exists.
-        return ((json.has(MEMBER_NAME)) ? json.get(MEMBER_NAME).getAsString() : "");
-    }
-
     public List<FacebookObject> getLikes(String id)
     {
         final List<FacebookObject> result = new ArrayList<>();

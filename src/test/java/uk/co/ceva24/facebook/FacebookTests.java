@@ -35,13 +35,6 @@ public class FacebookTests
     }
 
     @Test
-    public void testGetNameForId()
-    {
-        String name = facebook.getNameForId(userName);
-        assertEquals("Unexpected username value returned", "Christian Evans", name);
-    }
-
-    @Test
     public void testGetLikes()
     {
         List<FacebookObject> likes = facebook.getLikes(pageName);

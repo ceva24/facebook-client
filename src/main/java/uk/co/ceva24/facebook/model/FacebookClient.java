@@ -61,19 +61,6 @@ public class FacebookClient
         authToken = response.getEntity(String.class).split("=")[1];
     }
 
-    public String getObjectProperties(String objectName)
-    {
-        // Create user timeline resource and encode the user name.
-        final WebResource profile = graphBase.path(objectName);
-        WebResource.Builder profileBuilder = 
-                profile.type(MediaType.APPLICATION_JSON_TYPE);
-
-        // HTTP GET.
-        ClientResponse response = profileBuilder.get(ClientResponse.class);
-
-        return response.getEntity(String.class);
-    }
-
     public String getObjectLikes(String objectName)
     {
         // Create likes resource and encode the access token.
